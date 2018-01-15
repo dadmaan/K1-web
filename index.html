@@ -7,20 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:700|Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="node_modules\jquery\dist\jquery.min.js">
+    <script type="text/javascript" src="node_modules\jquery\dist\jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules\popper.js\dist\popper.min.js"></script>
+    <script type="text/javascript" src="node_modules\popper.js\dist\popper-utils.min.js"></script>
+    <script type="text/javascript" src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap-grid.min.css">
     <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
     <script type="text/javascript" src="node_modules\bootstrap\js\dist\scrollspy.js"></script>
 
     <link rel="stylesheet" href="CSS/main.css">
+    <script>
+        function menuToggler(x) {
+            x.classList.toggle("change");
+        }
+    </script>
 
     <body>
         <nav id="topnav" class="navbar fixed-top navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="index.html">Keivan Teimoorian</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler offset-md-6 offset-sm-6" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div id="menuToggle" onclick="menuToggler(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -40,17 +52,27 @@
                         <a class="nav-link" href="#contactme">Contact Me</a>
                     </li>
                 </ul>
-            </div>
-            <div id="navButton" class="btn-group my-2 my-lg-0">
-                <a class="btn callbtn" href="callto:+989123858262" role="button">Call Me Now</a>
-                <a class="btn socialbtn" href="http://instagram.com" role="button">
-                    <span class="fa fa-instagram"></span>
-                </a>
-                <a class="btn socialbtn" href="http://t.me" role="button">
-                    <span class="fa fa-paper-plane"></span>
-                </a>
+                <div id="navButton" class="btn-group">
+                    <a class="btn callbtn" href="callto:+989123858262" role="button">Call Me Now</a>
+                    <a class="btn socialbtn" href="http://instagram.com" role="button">
+                        <span class="fa fa-instagram"></span>
+                    </a>
+                    <a class="btn socialbtn" href="http://t.me" role="button">
+                        <span class="fa fa-paper-plane"></span>
+                    </a>
+                </div>
             </div>
         </nav>
+        <header id="home" class="container-fluid">
+            <div>
+                <section id="intro">
+                    <h1>I Provide Ideal Language Learning
+                        <br> Guidelines For Those
+                        <br> Who Seek The Very Best.</h1>
+                    <p>I will help you to achieve the results because I know what you exactly need</p>
+                </section>
+            </div>
+        </header>
     </body>
 
 </html>
