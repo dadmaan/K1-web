@@ -12,6 +12,9 @@ h5,
 h6{
     font-family: 'Raleway', sans-serif;
 }
+hr{
+    border: 2px solid black;
+}
 p, 
 a{
     font-family: 'Roboto Slab', serif;
@@ -119,13 +122,15 @@ button:focus {
     width: 40px;
     padding: 0%;
     height: 40px;
-    top: 2px;
+    top: 4px;
     border-radius: 6px;
     text-align: center;
     font-size: 26px;
     color: white;
 }
-
+#navButton a:nth-child(2) span{
+    font-size: 1.1em;
+}
 @media (min-width: 991px){
     #navbarSupportedContent ul > li{
         margin-right: 10px;
@@ -134,20 +139,21 @@ button:focus {
 /* End of Nav Bar */
 /* Header */
 #home{
-    padding: 25% 5%;
+    padding: 25% 5% 5%;
     margin-top: 40px;
 }
 #home div{
     background-color: #00B3B3;
 }
-#intro{
+#intro-h{
     padding: 4% 6% 3%;
 }
-#intro h1{
+#intro-h h1{
 font-size: 1.75rem;
 text-align: center;
+padding-bottom: 10%;
 }
-#intro p{
+#intro-h p{
     text-align: center;
     border: 2px solid black;
     padding: 3%;
@@ -169,21 +175,22 @@ text-align: center;
         background-repeat: no-repeat;
         background-size: contain;
     }
-    #intro{
+    #intro-h{
         padding: 10% 6%;
     }
-    #intro h1{
+    #intro-h h1{
     text-align: left;
      width: 70%;
+     padding-bottom: 1%;
     }
-    #intro p{
+    #intro-h p{
     text-align: left;
     padding: 1%;
     width: 60%;
     }
 }
 @media (min-width:768px){
-    #intro{
+    #intro-h{
         padding: 10% 6%;
     }
 }
@@ -191,7 +198,7 @@ text-align: center;
     #home {
         padding: 0% 5%;
     }
-    #intro{
+    #intro-h{
         padding: 11% 6%;
     }
     #navButton{
@@ -200,16 +207,183 @@ text-align: center;
     }
 }
 @media (min-width: 1100px){
-    #intro h1 {
+    #intro-h h1 {
         font-size: 2.5rem;
     }
-    #intro p {
+    #intro-h p {
         width: 50%;
         font-size: 24px;
     }
 }
 @media (min-width: 1440px){
-    #intro{
+    #intro-h{
         padding: 15% 6%;
     }
 }
+
+/* Section 2 - Who is me */
+    /* Description */
+#whoisme{
+    padding:15% 5%;
+    background-color: transparent;
+}
+
+#intro-w{
+    padding: 0 6% 5%;
+    margin: auto;
+}
+#intro-w h1{
+    text-align: center;
+    font-size: 1.5em;
+}
+#intro-w h1 > span{
+    font-size: 1.5em;
+}
+#intro-w p{
+    text-align: left;
+    font-size: 18px;
+}
+#intro-w p:nth-last-child(){
+    margin-top: 5px;
+}
+    /* Certification */
+#certification{
+    padding: 5% 5% 0;
+    margin: auto;
+}
+#certification h6,
+#schools > h6{
+    text-align: center;
+    border: 2px solid #00b3b3;
+    padding: 6%;
+    margin-bottom: 25px;
+}
+#certification .row{
+    margin:auto;
+}
+#certification > div{
+    padding: 6%;
+}
+.cert-img{
+    background-color: black;
+    padding: 4%;
+}
+#certification .fix-row .cert-img{
+    margin-top: 5px;
+}
+.cert-img img{
+    width: 100%;
+}
+#schools{
+    padding: 6%;
+}
+#schools .row{
+    margin:auto;
+    padding: 10% 2% 0;
+    background-color: black;
+}
+#schools .row > div{
+    margin-bottom: 30px;
+}
+.school-img{
+    text-align: center;
+    padding-bottom: 7%;
+}
+.school-img img{
+    width: 100%;
+}
+#schools .row div:nth-child(1) div img{
+    background-color: white;
+    padding: 2%;
+}
+#schools .row div:nth-child(3) div img{
+    width: 80%;
+}
+#schools .row div:nth-child(4) div img{
+    width: 62%;
+}
+.school-info{
+    background-color: white;
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+    padding: 5%;
+    margin-bottom: 10px;
+    min-height: 150px;
+    margin-top: 20px;
+}
+.school-info::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 111px;
+    width: 0;
+    z-index: 1;
+    left: 45%;
+    border: medium solid white;
+    border-width: 0px 10px 10px 10px;
+    border-color: transparent transparent white transparent;
+}
+    .school-info p{
+    padding-top: 5%;
+}
+@media (min-width: 375px){
+    #whoisme{
+        padding:10% 5%;
+        background-color: transparent;
+    }
+}
+@media (min-width: 768px){
+    #intro-w {
+        padding: 0 20%;
+    }
+    #intro-w h1{
+        font-size: 2em;
+    }
+
+    #certification h6,
+    #schools > h6 {
+        width: 70%;
+        padding: 3% 0;
+        margin: auto;
+    }
+    #certification > div{
+        margin:auto;
+        padding: 6% 0;
+    }
+    .fix-row{
+        padding: 0px 5%;
+    }
+    #schools .row{
+        margin-top: 7%;
+    }
+    #schools .row div:nth-child(3) div img{
+        width: 75%;
+    }
+    #schools .row div:nth-child(4) div img{
+        width: 59%;
+    }
+    .school-info::before {
+        top: 66px;
+    }
+    .school-info p {
+        font-size: 14px;
+    }
+}
+@media (min-width: 1440px){
+    #intro-w {
+        padding: 0 25%;
+    }
+    #intro-w h1{
+        font-size: 2.5em;
+    }
+    #intro-w p{
+        font-size: 24px;
+    }
+    #certification h6,
+    #schools > h6 {
+        width: 56%;
+        font-size: 1.25em;
+    }
+}
+/* End of section2 - who is me */
