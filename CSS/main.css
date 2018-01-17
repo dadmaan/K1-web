@@ -221,29 +221,34 @@ padding-bottom: 10%;
     }
 }
 
-/* Section 2 - Who is me */
-    /* Description */
+                    /* Section 2 - Who is me */
+                        /* Description */
 #whoisme{
     padding:15% 5%;
     background-color: transparent;
 }
 
-#intro-w{
+#intro-w,
+#intro-s{
     padding: 0 6% 5%;
     margin: auto;
 }
-#intro-w h1{
+#intro-w h1,
+#intro-s h1{
     text-align: center;
     font-size: 1.5em;
 }
-#intro-w h1 > span{
+#intro-w h1 > span,
+#intro-s h1 > span{
     font-size: 1.5em;
 }
-#intro-w p{
+#intro-w p,
+#intro-s p{
     text-align: left;
     font-size: 18px;
 }
-#intro-w p:nth-last-child(){
+#intro-w p:nth-last-child(),
+#intro-s p:nth-last-child(){
     margin-top: 5px;
 }
     /* Certification */
@@ -280,70 +285,97 @@ padding-bottom: 10%;
 #schools .row{
     margin:auto;
     padding: 10% 2% 0;
-    background-color: black;
 }
 #schools .row > div{
     margin-bottom: 30px;
 }
-.school-img{
-    text-align: center;
-    padding-bottom: 7%;
-}
-.school-img img{
-    width: 100%;
-}
-#schools .row div:nth-child(1) div img{
-    background-color: white;
-    padding: 2%;
-}
-#schools .row div:nth-child(3) div img{
-    width: 80%;
-}
-#schools .row div:nth-child(4) div img{
-    width: 62%;
-}
 .school-info{
-    background-color: white;
-    border-radius: 6px;
+    padding-top: 100%;
+    position: relative;
+    border-radius: 50%;
     color: black;
     text-align: center;
-    padding: 5%;
-    margin-bottom: 10px;
-    min-height: 150px;
-    margin-top: 20px;
 }
-.school-info::before {
+#schools .row > div:nth-child(1) .school-info{
+    background-color: black;
+    border: 5px solid #00b3b3;
+    color: white;
+}
+#schools .row > div:nth-child(2) .school-info{
+    background-color: #232323;
+    border: 5px solid #BABABA;
+    color: white;
+}
+#schools .row > div:nth-child(3) .school-info{
+    background-color: #BABABA;
+    border: 5px solid #232323;
+}
+#schools .row > div:nth-child(4) .school-info{
+    background-color: #00B3B3;
+    border: 5px solid black;
+}
+#schools .row > div:not(nth-last-child) .school-info::before{
     content: " ";
-    height: 0;
     position: absolute;
-    top: 111px;
-    width: 0;
+    bottom: -40px;
+    left: 47%;
+    height: 40px;
+    width: 15px;
     z-index: 1;
-    left: 45%;
-    border: medium solid white;
-    border-width: 0px 10px 10px 10px;
-    border-color: transparent transparent white transparent;
+}
+#schools .row > div:nth-child(1) .school-info::before {
+    background: linear-gradient(#00b3b3, #bababa);
+}
+#schools .row > div:nth-child(2) .school-info::before {
+    background: linear-gradient(#bababa, #232323);
+}
+#schools .row > div:nth-child(3) .school-info::before {
+    background: linear-gradient(#232323, black);
 }
     .school-info p{
-    padding-top: 5%;
+        position: absolute;
+        width: 90%;
+        top: 25%;
+        left: 5%;
+        bottom: 0;
+        right: 0;
 }
 @media (min-width: 375px){
     #whoisme{
         padding:10% 5%;
         background-color: transparent;
     }
+    .school-info p{
+        font-size: 20px;
+    }
+    .school-info p .raleway{
+        font-size: 24px;
+    }
 }
 @media (min-width: 768px){
-    #intro-w {
-        padding: 0 20%;
+    #schools {
+        padding: 6% 0;
     }
-    #intro-w h1{
+    #intro-w,
+    #intro-s {
+        padding: 0 25%;
+    }
+    #intro-w h,
+    #intro-s h1{
         font-size: 2em;
     }
 
-    #certification h6,
+    #intro-w ,
+    #intro-s p{
+        font-size: 20px;
+    }
+    #certification h6 {
+        width: 57%;
+        padding: 3% 0;
+        margin: auto;
+    }
     #schools > h6 {
-        width: 70%;
+        width: 75%;
         padding: 3% 0;
         margin: auto;
     }
@@ -354,30 +386,44 @@ padding-bottom: 10%;
     .fix-row{
         padding: 0px 5%;
     }
-    #schools .row{
-        margin-top: 7%;
+    #schools .row > div:not(nth-last-child) .school-info::before{
+        height: 15px;
+        width: 40px;
+        top: 43%;
+        left: 100%;
     }
-    #schools .row div:nth-child(3) div img{
-        width: 75%;
+    #schools .row > div:nth-child(1) .school-info::before {
+        background: linear-gradient(90deg, #00b3b3, #bababa);
     }
-    #schools .row div:nth-child(4) div img{
-        width: 59%;
+    #schools .row > div:nth-child(2) .school-info::before {
+        background: linear-gradient(90deg, #bababa, #232323);
     }
-    .school-info::before {
-        top: 66px;
+    #schools .row > div:nth-child(3) .school-info::before {
+        background: linear-gradient(90deg, #232323, black);
     }
-    .school-info p {
+}
+@media (min-width: 768px) and (max-width:991px){
+    .school-info p,
+    .school-info p .raleway{
         font-size: 14px;
     }
 }
-@media (min-width: 1440px){
-    #intro-w {
-        padding: 0 25%;
+@media (min-width: 1240px){
+    #schools .row > div:not(nth-last-child) .school-info::before{
+        height: 20px;
     }
-    #intro-w h1{
+}
+@media (min-width: 1440px){
+    #intro-w,
+    #intro-s {
+        padding: 0 27%;
+    }
+    #intro-w h,
+    #intro-s h1{
         font-size: 2.5em;
     }
-    #intro-w p{
+    #intro-w ,
+    #intro-s p{
         font-size: 24px;
     }
     #certification h6,
@@ -387,3 +433,27 @@ padding-bottom: 10%;
     }
 }
 /* End of section2 - who is me */
+/* Section 3 - Services */
+#services{
+    background-color: #bababa;
+    padding: 15% 0;
+}
+#category-s > div{
+    padding: 15%;
+}
+#category-s > div:nth-child(1),
+#category-s > div:nth-child(3){
+    background-color: #00b3b3;
+    color: white;
+}
+.category-img{
+    padding-top: 100%;
+    background-color: black;
+    margin: auto;
+    border-radius: 50%;
+}
+.category-info h6{
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px 0;
+}
