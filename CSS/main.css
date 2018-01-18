@@ -4,6 +4,9 @@ html, body{
     font-family: 'Roboto Slab', sans-serif;
     font-size: 18px;
 }
+body{
+    position: relative;
+}
 h1,
 h2,
 h3,
@@ -27,6 +30,22 @@ a{
 .raleway{
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
+}
+.bg-color-b{
+    background-color: black;
+    color: white;
+}
+.bg-color-dg{
+    background-color: #232323;
+    color: white;
+}
+.bg-color-lg{
+    background-color: #bababa;
+    color: black;
+}
+.bg-color-c{
+    background-color: #00B3B3;
+    color: black;
 }
 /* Nav Bar */
 #topnav {
@@ -116,6 +135,12 @@ button:focus {
     width: 190px;
     color: black;
     border: 4px solid #00FFDC;
+    transition: 0.25s ease;
+}
+#navButton .callbtn:hover{
+    color: white;
+    background-color: black;
+    text-decoration: none;
 }
 #navButton .socialbtn{
     background-color: black;
@@ -127,11 +152,16 @@ button:focus {
     text-align: center;
     font-size: 26px;
     color: white;
+    transition: 0.25s ease;
+}
+#navButton .socialbtn:hover{
+    color: #00B3B3;
+    text-decoration: none;
 }
 #navButton a:nth-child(2) span{
     font-size: 1.1em;
 }
-@media (min-width: 991px){
+@media only screen and (min-width: 991px){
     #navbarSupportedContent ul > li{
         margin-right: 10px;
     }
@@ -158,12 +188,12 @@ padding-bottom: 10%;
     border: 2px solid black;
     padding: 3%;
 }
-@media (min-width: 425px){
+@media only screen and (min-width: 425px){
     #home{
         padding: 17% 5%;
     }
 }
-@media (min-width: 600px){
+@media only screen and (min-width: 600px){
     #home{
         padding: 3% 5%;
         margin-top: 100px;
@@ -189,12 +219,12 @@ padding-bottom: 10%;
     width: 60%;
     }
 }
-@media (min-width:768px){
+@media only screen and (min-width:768px){
     #intro-h{
         padding: 10% 6%;
     }
 }
-@media (min-width: 991px){
+@media only screen and (min-width: 991px){
     #home {
         padding: 0% 5%;
     }
@@ -206,7 +236,7 @@ padding-bottom: 10%;
     margin: unset;
     }
 }
-@media (min-width: 1100px){
+@media only screen and (min-width: 1100px){
     #intro-h h1 {
         font-size: 2.5rem;
     }
@@ -215,14 +245,14 @@ padding-bottom: 10%;
         font-size: 24px;
     }
 }
-@media (min-width: 1440px){
+@media only screen and (min-width: 1440px){
     #intro-h{
         padding: 15% 6%;
     }
 }
 
-                    /* Section 2 - Who is me */
-                        /* Description */
+ /* Section 2 - Who is me */
+    /* Description */
 #whoisme{
     padding:15% 5%;
     background-color: transparent;
@@ -257,7 +287,8 @@ padding-bottom: 10%;
     margin: auto;
 }
 #certification h6,
-#schools > h6{
+#schools > h6,
+#student-comment > div > h6{
     text-align: center;
     border: 2px solid #00b3b3;
     padding: 6%;
@@ -278,7 +309,38 @@ padding-bottom: 10%;
 }
 .cert-img img{
     width: 100%;
+    transition: 0.5s ease;
 }
+.cert-overlay{
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.cert-overlay a{
+    color: white;
+    font-size: 1.5em;
+}
+.cert-overlay a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.cert-img:hover .cert-overlay{
+    opacity: 1;
+    cursor: pointer;
+}
+.cert-img:hover img{
+    opacity: 0.25;
+    cursor: pointer;
+}
+/* Schools */
 #schools{
     padding: 6%;
 }
@@ -340,7 +402,7 @@ padding-bottom: 10%;
         bottom: 0;
         right: 0;
 }
-@media (min-width: 375px){
+@media only screen and (min-width: 375px){
     #whoisme{
         padding:10% 5%;
         background-color: transparent;
@@ -352,7 +414,7 @@ padding-bottom: 10%;
         font-size: 24px;
     }
 }
-@media (min-width: 768px){
+@media only screen and (min-width: 768px){
     #schools {
         padding: 6% 0;
     }
@@ -369,7 +431,8 @@ padding-bottom: 10%;
     #intro-s p{
         font-size: 20px;
     }
-    #certification h6 {
+    #certification h6,
+    #student-comment > div > h6 {
         width: 57%;
         padding: 3% 0;
         margin: auto;
@@ -402,18 +465,18 @@ padding-bottom: 10%;
         background: linear-gradient(90deg, #232323, black);
     }
 }
-@media (min-width: 768px) and (max-width:991px){
+@media only screen and (min-width: 768px) and (max-width:991px){
     .school-info p,
     .school-info p .raleway{
         font-size: 14px;
     }
 }
-@media (min-width: 1240px){
+@media only screen and (min-width: 1240px){
     #schools .row > div:not(nth-last-child) .school-info::before{
         height: 20px;
     }
 }
-@media (min-width: 1440px){
+@media only screen and (min-width: 1440px){
     #intro-w,
     #intro-s {
         padding: 0 27%;
@@ -427,7 +490,8 @@ padding-bottom: 10%;
         font-size: 24px;
     }
     #certification h6,
-    #schools > h6 {
+    #schools > h6,
+    #student-comment > div > h6 {
         width: 56%;
         font-size: 1.25em;
     }
@@ -436,7 +500,7 @@ padding-bottom: 10%;
 /* Section 3 - Services */
 #services{
     background-color: #bababa;
-    padding: 15% 0;
+    padding: 15% 0 0;
 }
 #category-s > div{
     padding: 15%;
@@ -448,7 +512,6 @@ padding-bottom: 10%;
 }
 .category-img{
     padding-top: 100%;
-    background-color: black;
     margin: auto;
     border-radius: 50%;
 }
@@ -457,3 +520,381 @@ padding-bottom: 10%;
     font-size: 1.5em;
     padding: 20px 0;
 }
+#category-s div:nth-child(1) .category-img{
+    background-image: url("Logo/IELTS_logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-color: white;
+}
+#category-s div:nth-child(2) .category-img{
+    background-image: url("Logo/Flagge-Deutschland.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#category-s div:nth-child(3) .category-img{
+    background-image: url("Logo/006-online-learning-1.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-color: black;
+}
+#category-s div:nth-child(4) .category-img{
+    background-image: url("Logo/Businessman.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: white;
+}
+@media only screen and (min-width: 768px){
+    #intro-s{
+        padding-bottom: 10%;
+    }
+    #category-s > div{
+        padding: 7%;
+    }
+    #category-s > div:nth-child(4){
+        background-color: #00b3b3;
+        color: white;
+    }
+    #category-s > div:nth-child(3){
+        background-color: unset;
+        color: black;
+    }
+}
+@media only screen and (min-width: 992px){
+    #category-s > div{
+        padding:7% 10%;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .category-info h6{
+        font-size: 1.75em;
+    }
+    .category-info p{
+        font-size: 24px;
+    }
+    #category-s > div{
+        padding:7% 13%;
+    }
+}
+/* Students Comment */
+#student-comment{
+    padding: 10% 0 0;
+    margin: 0;
+    background-color: white;
+}
+#student-comment > div{
+    padding: 0 10%;
+}
+#student-comment .row{
+    padding: 0 15%;
+}
+.comment-container p{    
+    padding: 10%;
+    font-size: 14px;
+    border-radius: 10px;
+}
+#student-comment > div .row div:nth-child(1) p::before{
+    content: " ";
+    height: 0;
+    position: absolute;
+    bottom: 40px;
+    width: 0;
+    z-index: 1;
+    left: 45%;
+    border: medium solid black;
+    border-width: 10px 10px 0px 10px;
+    border-color: black transparent transparent transparent;
+}
+#student-comment > div .row div:nth-child(2) p::before{
+    content: " ";
+    height: 0;
+    position: absolute;
+    bottom: 40px;
+    width: 0;
+    z-index: 1;
+    left: 45%;
+    border: medium solid #232323;
+    border-width: 10px 10px 0px 10px;
+    border-color: #232323 transparent transparent transparent;
+}
+#student-comment > div .row div:nth-child(3) p::before{
+    content: " ";
+    height: 0;
+    position: absolute;
+    bottom: 40px;
+    width: 0;
+    z-index: 1;
+    left: 45%;
+    border: medium solid #bababa;
+    border-width: 10px 10px 0px 10px;
+    border-color: #bababa transparent transparent transparent;
+}
+#student-comment > div .row div:nth-child(4) p::before{
+    content: " ";
+    height: 0;
+    position: absolute;
+    bottom: 40px;
+    width: 0;
+    z-index: 1;
+    left: 45%;
+    border: medium solid #00b3b3;
+    border-width: 10px 10px 0px 10px;
+    border-color: #00b3b3 transparent transparent transparent;
+}
+@media only screen and (min-width: 768px){
+    #student-comment > div{
+        padding: 0 3%;
+    }
+    #student-comment .row{
+        padding: 10% 0 0;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .comment-container p{    
+        font-size: 20px;
+    }
+}
+#pricing{
+    background-color: #232323;
+    border-radius: 10px;
+    color: white;
+    margin: 20% auto;
+}
+#pricing > div {
+    padding: 10%;
+    text-align: center;
+}
+#pricing h1{
+    font-size: 1.5em;
+    text-align: left;
+}
+#pricing hr {
+    text-align: center;
+    border: white solid 2px;
+}
+#pricing p{
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+}
+#pricing a{
+    margin: auto;
+    color: white;
+    padding: 3% 10%;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #00b3b3;
+    border: #00FFDC solid 5px;
+    transition: 0.25s ease;
+}
+#pricing a:hover{
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+@media only screen and (min-width: 768px){
+    #pricing{
+        margin-bottom: 10%;
+        width: 70%;
+    }
+    #pricing > div {
+        padding: 10% 15%;
+    }
+}
+@media only screen and (min-width: 1200px){
+    #pricing h1{
+        font-size: 2.5em;
+    }
+    #pricing p{
+        font-size: 24px;
+    }
+    #pricing a{
+        font-size: 24px;
+    }
+}
+/* End of Students Comment */
+/* Section 4 - Big Quote */
+#big-quote{
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 13% 15%;
+    background-color: #00b3b3;
+}
+#big-quote h1{
+    font-size: 1.25em;
+    color: black;
+    margin:auto;
+}
+#big-quote h1 span{
+    margin-top: 20px;
+    font-size: 14px;
+}
+@media only screen and (min-width: 768px){
+    #big-quote h1{
+        font-size: 1.5em;
+    }
+    #big-quote h1 span{
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 992px){
+    #big-quote h1{
+        font-size: 2em;
+    }
+    #big-quote h1 span{
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 1200px){
+    #big-quote{
+        padding: 10% 15%;
+    }
+    #big-quote h1{
+        font-size: 2.5em;
+    }
+    #big-quote h1 span{
+        font-size: 24px;
+    }
+}
+/* End of Big Quote */
+/* Section 5 - Contact Me */
+#contact-me{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#contact-me > header{
+    padding: 10% 15%;
+    text-align: center;
+}
+#contact-me > header h1{
+    font-size: 1.5em;
+    color: white;
+    text-align: left;
+}
+#contact-me > header p{
+    font-size: 18px;
+    color: white;
+    text-align: left;
+}
+#contact-me > header div{
+    margin: auto;
+    text-align: center;
+}
+#contact-me > header > div a{
+    font-size: 1.75em;
+    color: white;
+    transition: 0.25s ease;
+}
+#contact-me > header > div a:hover{
+    color: #00b3b3;
+    text-decoration: none;
+}
+.social-text{
+    display: none;
+    color: white;
+    font-size: 18px;
+}
+#mailbox{
+    padding: 0 5% 15%;
+    text-align: center;
+    margin: auto;
+}
+#mailbox .row div p{
+    color: white;
+    padding: 0 0 5%;
+}
+#mailbox .row div a{
+    margin: auto;
+    color: black;
+    padding: 3% 10%;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #00B3B3;
+    border: #00FFDC solid 5px;
+    transition: 0.25s ease;
+}
+#mailbox .row div a:hover{
+    background-color: white;
+    text-decoration: none;
+}
+#foot-note{
+    font-size: 10px;
+    text-align: center;
+    color: white;
+}
+#foot-note a{
+    font-size: 10px;
+    color: #00b3b3;
+    transition: 0.25s ease;
+}
+#foot-note a:hover{
+    text-decoration: none;
+    color: #BABABA;
+}
+@media only screen and (min-width:768px){
+    .social-text{
+        display: inline;
+    }
+    #contact-me > header > div a:nth-child(1){
+        margin-right: 20px;
+    }
+    #contact-me > header > div a{
+        font-size: 2em;
+        color: white;
+    }
+    #mailbox{
+        padding:0 5% 5%;
+    }
+    #mailbox .row div a{
+        padding: 2% 15%;
+    }
+}
+@media only screen and (min-width:1200px){
+    .social-text{
+        font-size: 18px;
+    }
+    #contact-me > header > div a{
+        font-size: 2em;
+        color: white;
+    }
+    #contact-me > header h1{
+        font-size: 2.5em;
+        color: white;
+        text-align: left;
+    }
+    #contact-me > header p{
+        font-size: 24px;
+        color: white;
+        text-align: left;
+    }
+    #mailbox{
+        padding: 0 7% 5%;
+        text-align: center;
+        margin: auto;
+    }
+    #mailbox .row div p{
+        font-size: 24px;
+    }
+    #mailbox .row div a{
+        margin: auto;
+        color: black;
+        padding: 2% 15%;
+        font-size: 22px;
+    }
+}
+/* End of Section 5 - Contact Me */
+
+/* Modal Section */
+.modal .modal-dialog .modal-content img{
+    width: 100%;
+    text-align: center;
+}
+/* End of Modal Section */
