@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('#loading').css('height', '0');
+            $('.animation-loading').css('display', 'none');
+            $('#topNav').css('position', 'fixed')
+        }, 10000);
+
+    });
     window.onscroll = function () { topnavShadow() };
 
     function topnavShadow() {
