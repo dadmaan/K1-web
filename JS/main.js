@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
             $('#loading').css('height', '0');
             $('.animation-loading').css('display', 'none');
             $('#topNav').css('position', 'fixed')
-        }, 10000);
+        }, 15000);
 
     });
     window.onscroll = function () { topnavShadow() };
