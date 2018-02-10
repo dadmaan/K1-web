@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     $(document).ready(function () {
+        $('#count').animationCounter({
+            start: 0,
+            end: 100,
+            step: 1,
+            delay: 130,
+            txt: ' %'
+            });
         setTimeout(function () {
             $('#loading').css('height', '0');
             $('.animation-loading').css('display', 'none');
-            $('#topNav').css('position', 'fixed')
+            $('#topNav').css('position', 'fixed');
         }, 15000);
 
     });
